@@ -1,0 +1,46 @@
+/* foggiest jungle green #048243
+        recluse greenish teal #32BF84
+        merging light light blue #CAFFFB */
+:root {
+  --jungle-green: #048243;
+  --greenish-teal: #32bf84;
+  --merging-blue: #cafffb;
+}
+
+body {
+  background-color: var(--jungle-green);
+  color: var(--merging-blue);
+}
+
+#messages {
+  overflow: auto;
+  height: 300px;
+  border: 1px solid var(--greenish-teal);
+  padding: 20px;
+}
+
+.avatar-heading {
+  float: left;
+  margin: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  margin: 7px;
+  padding: 12px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--greenish-teal);
+}

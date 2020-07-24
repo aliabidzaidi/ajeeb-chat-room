@@ -5,15 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask sockets</title>
-    <style>
-        #messages {
-            overflow: auto;
-            height: 300px;
-            border: 1px solid grey;
-            padding: 20px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename="styles.css")}}">
 </head>
 
 <body>
@@ -21,10 +13,13 @@
 
     <div class="profile"></div>
     <input type="text" name="msg" id="msg-txtbox">
-    <button id="msg-btn">Click me</button>
+    <button id="msg-btn">Send</button>
     <button id="ping-btn">Ping Everyone</button>
     <div id="messages" style="height: 300px;"></div>
-    <div id="online-users">show online users here </div>
+    <div>
+        <h2 class="avatar-heading">Online Users</h2>
+        <div id="online-users" class="avatar-parent"></div>
+    </div>
 
 </body>
 

@@ -44,16 +44,21 @@ def disconnect():
     clients.remove(request.sid)
     userName = getClientName(request.sid)
     removeClient(request.sid)
+    update_clients()
     now = datetime.datetime.now()
     nowString = now.strftime('%Y-%m-%d %I:%M:%S %p')
     # print(nowString)
     emit('i-room', {'message': '%s has left the chat' % userName,  'userName': userName, 'currentTime': nowString}, broadcast=True)
 
+def update_clients():
+    activeClients = [c['userName'] for c in clientDict]
+    emit('clients', {'clients': activeClients}, broadcast=True)
 
 @socketio.on('room')
 def room_connect(d):
     print(d)
     addClientName(request.sid, d["userName"])
+    update_clients()
     emit('i-room', {'message': d["message"],  'userName': d["userName"], 'currentTime': d["currentTime"]}, broadcast=True)
 
 
@@ -76,6 +81,6 @@ def getClientName(clientSid):
     return 'unknown'
 
 if __name__ == '__main__':
-    print('app running on http://localhost:5000/')
+    print('app running on http://localhost:5100/')
     # socketio.run(app, debug=True)
-    socketio.run(app, debug=True)
+    socketio.run(app, host='0.0.0.0', debug=True, port=5100)
