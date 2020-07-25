@@ -1,7 +1,7 @@
 // var userName = prompt('Enter your username', 'abidzaidi')
 // console.log(userName)
 
-var socket = io((host = "localhost:5100"));
+var socket = io();
 var clientId;
 var myName = chance.word({ length: 5 });
 var lastName = chance.word({ length: 7 });
