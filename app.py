@@ -83,4 +83,5 @@ def getClientName(clientSid):
 if __name__ == '__main__':
     print('app running on http://localhost:5100/')
     # socketio.run(app, debug=True)
-    socketio.run(app, host='0.0.0.0', debug=True, port=5100)
+    # socketio.run(app, host='0.0.0.0', debug=True, port=5100)
+    socketio.run()
