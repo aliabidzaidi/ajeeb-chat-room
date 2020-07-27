@@ -58,6 +58,8 @@ def update_clients():
 def room_connect(d):
     print(d)
     addClientName(request.sid, d["userName"])
+    sid = request.sid
+    print(sid)
     update_clients()
     emit('i-room', {'message': d["message"],  'userName': d["userName"], 'currentTime': d["currentTime"]}, broadcast=True)
 
@@ -83,5 +85,5 @@ def getClientName(clientSid):
 if __name__ == '__main__':
     print('app running on http://localhost:5100/')
     # socketio.run(app, debug=True)
-    # socketio.run(app, host='0.0.0.0', debug=True, port=5100)
-    socketio.run()
+    socketio.run(app, host='0.0.0.0', debug=True, port=5100)
+    # socketio.run()

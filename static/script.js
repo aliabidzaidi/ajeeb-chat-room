@@ -16,7 +16,7 @@ const pingButton = document.getElementById("ping-btn");
 const messageButton = document.getElementById("msg-btn");
 const messageTextBox = document.getElementById("msg-txtbox");
 
-nameTag = document.createElement("h2");
+nameTag = document.createElement("h3");
 nameTag.innerText = `Username: ${myName} ${lastName}`;
 document.querySelector(".profile").appendChild(nameTag);
 

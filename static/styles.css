@@ -7,9 +7,60 @@
   --merging-blue: #cafffb;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap");
+
 body {
   background-color: var(--jungle-green);
   color: var(--merging-blue);
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0 10%;
+}
+
+nav {
+  background: var(--jungle-green);
+  color: var(--merging-blue);
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--merging-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+}
+
+.nav1 {
+  letter-spacing: 2px;
+  flex-grow: 1;
+}
+
+.nav2 a {
+  /* position: relative; */
+  /* display: inline-block; */
+  outline: none;
+  color: var(--merging-blue);
+  /* vertical-align: bottom; */
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid var(--merging-blue);
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 5px;
+  padding: 5px;
+  -webkit-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+@media only screen and (max-width: 700px) {
+  .nav2 a{font-size: 15px;}
+}
+.nav2 a:hover,
+.nav2 a:focus {
+  border-color: var(--merging-blue);
+  background-color: var(--merging-blue);
+  color: var(--jungle-green);
 }
 
 #messages {
