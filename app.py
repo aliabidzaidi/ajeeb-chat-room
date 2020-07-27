@@ -21,6 +21,11 @@ clientDict = []
 def index():
     return render_template('index.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    print('page not found')
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 @app.route("/clients")
 def get_clients():
